@@ -42,5 +42,5 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: cocokkan-huruf-hijaiyah-apk
+          name: apk-run-${{ github.run_number }}
           path: android/app/build/outputs/apk/debug/app-debug.apk
