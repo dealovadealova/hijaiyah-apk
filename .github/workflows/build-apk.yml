@@ -33,6 +33,10 @@ jobs:
           npx cap add android
           npx cap sync android
 
+      - name: Generate app icons
+        run: |
+          npx @capacitor/assets generate --android --iconBackgroundColor '#ffffff' --iconBackgroundColorDark '#ffffff'
+
       - name: Build debug APK
         run: |
           chmod +x android/gradlew
@@ -42,5 +46,5 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: apk-run-${{ github.run_number }}
+          name: tebak-harakat-apk
           path: android/app/build/outputs/apk/debug/app-debug.apk
